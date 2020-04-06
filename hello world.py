@@ -177,16 +177,12 @@ temp = ("小弟弟,", "都比")
 temp = temp[:2] + ("意境",) + temp[2:]
 print(temp)
 
-str1 = "i love you"
-print(str[:6])
-str1[:6] + "插入" + str1[6:]
-print(str1)
 
 str2 = "xiaoxie"
 print(str2.capitalize())
 str2 = "XUAIXU"
 print(str2.casefold())
-print(str1.center(50))
+print(str2.center(50))
 print(str2.count("xi"))
 str3 = "i\tsda\tdastt\.com"
 print(str3.expandtabs(10))
@@ -206,17 +202,85 @@ str6.split("i")
 str7 = "    aaaa     "
 str7.strip("a")
 str7.title()
-print(str1, str2, str3, str4, str6, str7)
+print( str2, str3, str4, str6, str7)
 
 print("{0} love {1}. {2}".format("i", "fish", "ccc"))
 print("{a} love {b}. {c}".format(a="i", b="fish", c="ccc"))
 print("\ta")
-print("{0:.1f}{1}").format(27.658, "GB")
+print(("{0:.1f}{1}").format(27.658, "GB"))
 
 print("%c" % 97)
-print("%c", "%c", "%c" % (97, 98, 99))
+print("%c", "%c", "%c" % 97, 98, 99)
 print("%s" % "i love u")
 print("%5.1f" % 25.556)
+
+count = 5
+def funs():
+    count = 10
+    print(10)
+print(funs())
+print(count)
+
+def funs():
+    global count
+    count = 10
+    print(count)
+print(funs())
+print(count)
+
+def ds(x):
+    return 2 * x + 1
+print(ds(5))
+g = lambda x : 2 * x + 1
+print(g(2))
+
+def add(x , y):
+    return x + y
+print(add(3, 4))
+g = lambda x, y : x + y
+print(g(3, 4))
+
+list(filter(None, [1, 0, False, True]))
+def add(x):
+    return x % 2
+temp = range(10)
+show = filter(add, temp)
+print(list(show))
+list(filter(lambda x : x % 2, range(10)))
+list(map(lambda x : x * 2, range(10)))
+
+# 求阶乘
+def recursion(n):
+    result = n
+    for i in range(1, n):
+        result *=i
+    return  result
+
+number = int(input("请输入一个数字："))
+result = recursion(number)
+print("%d 阶乘是：%d" % (number, result))
+
+
+def raby(n):
+    if n <1:
+        print("输入有误")
+    if n == 1 or n ==2:
+        return 2
+    else:
+        return raby(n-1) + raby(n-2)
+
+number = int(input("请输入月份数："))
+result = (raby(number))*2
+print("%d 个月后兔子数为：%d" % (number, result))
+
+
+
+
+
+
+
+
+
 
 
 
